@@ -1,0 +1,2995 @@
+/* =========================================================
+   RX RESOLVE — FINAL PROFESSIONAL HEALTHCARE UI
+   ========================================================= */
+
+:root {
+  --bg: #f0f1f4;
+  --white: #ffffff;
+
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --blue-soft: #eef5ff;
+
+  --header-blue-1: #294473;
+  --header-blue-2: #294b82;
+
+  --slate: #263746;
+  --slate-dark: #18232e;
+
+  --text: #243653;
+  --text-dark: #18232e;
+  --muted: #6f7f92;
+  --muted-light: #8a98a9;
+
+  --border: #dfe5eb;
+  --border-soft: #e8edf2;
+
+  --cyan: #27b7d3;
+
+  --green: #22c55e;
+  --red: #ef4444;
+  --amber: #f59e0b;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topbar {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  background: var(--slate);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background: var(--blue);
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 900;
+
+  box-shadow:
+    0 5px 14px
+    rgba(37, 99, 235, 0.25);
+}
+
+.brand-copy strong {
+  display: block;
+
+  color: white;
+
+  font-size: 15px;
+
+  letter-spacing: 0.08em;
+}
+
+.brand-copy span {
+  display: block;
+
+  margin-top: 3px;
+
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 13px;
+}
+
+.demo-badge {
+  padding: 9px 13px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+  max-width: 1420px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  margin: 0;
+
+  color: var(--text-dark);
+
+  font-size: 38px;
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -0.025em;
+}
+
+.hero p {
+  margin: 11px 0 0;
+
+  max-width: 780px;
+
+  color: #526273;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+.hero-actions {
+  display: flex;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  color: var(--blue);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 11px 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #d1d9e0;
+
+  background: white;
+
+  color: var(--slate);
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px
+    rgba(38, 55, 70, 0.10);
+}
+
+.btn-primary {
+  background: var(--blue);
+
+  border-color: var(--blue);
+
+  color: white;
+
+  box-shadow:
+    0 5px 14px
+    rgba(37, 99, 235, 0.20);
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+}
+
+.btn-ghost {
+  background: white;
+
+  color: var(--slate);
+}
+
+.btn-green {
+  color: #15803d;
+
+  border-color:
+    rgba(21, 128, 61, 0.20);
+}
+
+.btn-red {
+  color: #dc2626;
+
+  border-color:
+    rgba(220, 38, 38, 0.20);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   KPI CARDS
+   ========================================================= */
+
+.kpis {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 13px;
+
+  margin-bottom: 24px;
+}
+
+.kpi {
+  background: var(--blue) !important;
+
+  color: white;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  border-radius: 16px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 9px 24px
+    rgba(37, 99, 235, 0.15);
+}
+
+.kpi .label {
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+}
+
+.kpi .value {
+  margin-top: 8px;
+
+  color: white;
+
+  font-size: 30px;
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.kpi .sub {
+  margin-top: 7px;
+
+  color:
+    rgba(255, 255, 255, 0.70);
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.section-head {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 8px 0 13px;
+}
+
+.section-head h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 21px;
+
+  line-height: 1.25;
+
+  font-weight: 800;
+
+  letter-spacing: -0.015em;
+}
+
+.section-head .muted,
+.section-head .small-muted {
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.filters {
+  display: flex;
+
+  gap: 4px;
+
+  flex-wrap: wrap;
+
+  padding: 4px;
+
+  border-radius: 12px;
+
+  background: var(--slate);
+
+  border:
+    1px solid
+    rgba(38, 55, 70, 0.12);
+}
+
+.filter {
+  padding: 9px 13px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.filter:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.filter.active {
+  background: white;
+
+  color: var(--slate);
+}
+
+/* =========================================================
+   GENERAL CARD
+   ========================================================= */
+
+.card {
+  background: var(--blue);
+
+  color: white;
+
+  border-radius: 16px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 9px 25px
+    rgba(37, 99, 235, 0.14);
+
+  overflow: hidden;
+}
+
+.panel {
+  padding: 21px;
+}
+
+/* =========================================================
+   REFILL TABLE
+   ========================================================= */
+
+.case-list {
+  background: white !important;
+
+  color: var(--text) !important;
+
+  border:
+    1px solid
+    var(--border) !important;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 24px
+    rgba(24, 35, 46, 0.08) !important;
+
+  overflow: hidden;
+}
+
+.case-row {
+  display: grid;
+
+  grid-template-columns:
+    1.2fr
+    1fr
+    1.3fr
+    0.9fr
+    1fr
+    1.1fr
+    118px;
+
+  gap: 12px;
+
+  align-items: center;
+
+  padding: 18px 20px;
+
+  min-height: 112px;
+
+  background: white !important;
+
+  color: var(--text) !important;
+
+  border-top:
+    1px solid
+    var(--border-soft) !important;
+
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.case-row:hover {
+  background: #f8fafc !important;
+
+  box-shadow:
+    inset 3px 0 0
+    var(--blue);
+}
+
+/* Table header */
+
+.case-row.case-head {
+  min-height: 46px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--header-blue-1) 0%,
+      #263f6c 55%,
+      var(--header-blue-2) 100%
+    ) !important;
+
+  color: white !important;
+
+  border: none !important;
+
+  padding-top: 13px;
+
+  padding-bottom: 13px;
+}
+
+.case-head > div {
+  color: white !important;
+
+  font-size: 12px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+/* Specifically ensure Owner / Waiting remain visible */
+.case-head > div:nth-child(4),
+.case-head > div:nth-child(5) {
+  color: #ffffff !important;
+
+  opacity: 1 !important;
+
+  font-weight: 800 !important;
+}
+
+/* Refill number */
+
+.case-number {
+  color: #243653 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 800;
+}
+
+/* Patient */
+
+.case-patient {
+  margin-top: 4px;
+
+  color: #718096 !important;
+
+  font-size: 13px !important;
+}
+
+/* Why stuck */
+
+.case-row .small-muted {
+  color: #506078 !important;
+
+  font-size: 14px !important;
+
+  line-height: 1.55;
+}
+
+.case-row .small-muted strong {
+  color: #263653 !important;
+
+  font-size: 15px !important;
+}
+
+/* Owner / Waiting */
+
+.case-row > div:nth-child(4),
+.case-row > div:nth-child(5) {
+  color: #506078 !important;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+}
+
+/* Next action */
+
+.case-row .action-cell {
+  color: #263653 !important;
+
+  font-size: 14px !important;
+
+  line-height: 1.45;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   PROFESSIONAL BLOCKED STATUS
+   ========================================================= */
+
+.case-row .pill {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 5px 10px !important;
+
+  min-width: 76px;
+
+  border-radius: 8px !important;
+
+  background: var(--blue-soft) !important;
+
+  color: var(--blue) !important;
+
+  border:
+    1px solid
+    #c7dafb !important;
+
+  box-shadow: none !important;
+
+  font-size: 12px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+}
+
+/* Other status variants */
+
+.pill-blue {
+  background: var(--blue-soft);
+
+  color: var(--blue);
+
+  border:
+    1px solid
+    #c7dafb;
+}
+
+.pill-green {
+  background: #effaf2;
+
+  color: #15803d;
+
+  border:
+    1px solid
+    #c5e8ce;
+}
+
+.pill-red {
+  background: #fff1f2;
+
+  color: #dc2626;
+
+  border:
+    1px solid
+    #f6c5ca;
+}
+
+.pill-amber {
+  background: #fff8e8;
+
+  color: #b45309;
+
+  border:
+    1px solid
+    #f6dfae;
+}
+
+/* =========================================================
+   OPEN BUTTON
+   ========================================================= */
+
+.case-row .open-btn {
+  background: white !important;
+
+  color: #263653 !important;
+
+  border:
+    1px solid
+    #dbe1e7 !important;
+
+  border-radius: 9px !important;
+
+  min-height: 40px;
+
+  padding: 9px 15px !important;
+
+  box-shadow:
+    0 2px 6px
+    rgba(24, 35, 46, 0.05);
+
+  font-size: 14px !important;
+
+  font-weight: 700;
+}
+
+.case-row .open-btn:hover {
+  background: #f6f8fa !important;
+
+  color: var(--blue) !important;
+
+  border-color: #c9d4e0 !important;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px
+    rgba(24, 35, 46, 0.08);
+}
+
+/* =========================================================
+   DASHBOARD: OPERATIONAL VALUE / PRACTICE CARE /
+   SYSTEM DESIGN SIGNALS
+   Same clean treatment as Refills section
+   ========================================================= */
+
+main.page > section.card.panel {
+  background: transparent !important;
+
+  color: var(--text) !important;
+
+  border: none !important;
+
+  box-shadow: none !important;
+
+  border-radius: 0 !important;
+
+  overflow: visible !important;
+
+  padding: 0 !important;
+}
+
+/* Heading area */
+
+main.page > section.card.panel .section-head {
+  margin-top: 0;
+
+  margin-bottom: 13px;
+}
+
+main.page > section.card.panel .section-head h2 {
+  color: var(--text) !important;
+
+  font-size: 21px !important;
+
+  font-weight: 800;
+
+  letter-spacing: -0.015em;
+}
+
+main.page > section.card.panel .section-head .small-muted,
+main.page > section.card.panel .section-head .muted {
+  color: var(--muted) !important;
+
+  font-size: 14px !important;
+}
+
+/* Icons beside those headings */
+
+main.page > section.card.panel .section-head svg {
+  color: var(--blue) !important;
+}
+
+/* Content boxes */
+
+main.page > section.card.panel .info-grid {
+  margin-top: 0;
+}
+
+main.page > section.card.panel .info {
+  background: white !important;
+
+  color: var(--text) !important;
+
+  border:
+    1px solid
+    var(--border) !important;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  box-shadow:
+    0 4px 12px
+    rgba(24, 35, 46, 0.04);
+}
+
+/* Labels */
+
+main.page > section.card.panel .info .k {
+  color: #718096 !important;
+
+  font-size: 12px !important;
+
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+/* Values */
+
+main.page > section.card.panel .info .v {
+  margin-top: 7px;
+
+  color: #263653 !important;
+
+  font-size: 15px !important;
+
+  line-height: 1.5;
+
+  font-weight: 700;
+}
+
+/* Operational Value MetricValue */
+
+main.page > section.card.panel .info .small-muted {
+  color: #718096 !important;
+
+  font-size: 13px !important;
+
+  line-height: 1.5;
+}
+
+main.page > section.card.panel .footer-note {
+  color: #7a8796 !important;
+
+  font-size: 13px !important;
+
+  line-height: 1.6;
+
+  margin-top: 15px;
+}
+
+/* =========================================================
+   GENERAL INFO GRID
+   ========================================================= */
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.info-grid.two {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+/* =========================================================
+   DETAIL PAGE INFO
+   ========================================================= */
+
+.case-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    0.8fr;
+
+  gap: 16px;
+}
+
+.case-main,
+.case-side {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.case-main > .card,
+.case-side > .card {
+  background: var(--blue);
+
+  color: white;
+}
+
+.info {
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 12px;
+
+  padding: 14px;
+}
+
+.info .k {
+  color:
+    rgba(255, 255, 255, 0.62);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+}
+
+.info .v {
+  margin-top: 7px;
+
+  color: white;
+
+  font-size: 16px;
+
+  line-height: 1.45;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   GENERAL PANEL TEXT
+   ========================================================= */
+
+.panel h3 {
+  color: white;
+
+  font-size: 18px;
+
+  margin: 0;
+}
+
+.panel p {
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+.small-muted {
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 14px;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   CALLOUT
+   ========================================================= */
+
+.callout {
+  margin-top: 14px;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.14);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+}
+
+.callout.red {
+  background:
+    rgba(127, 29, 29, 0.14);
+
+  border-color:
+    rgba(254, 202, 202, 0.30);
+}
+
+.callout.green {
+  background:
+    rgba(20, 83, 45, 0.14);
+
+  border-color:
+    rgba(187, 247, 208, 0.30);
+}
+
+.callout h4 {
+  margin: 0 0 7px;
+
+  color: white;
+
+  font-size: 16px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.callout p {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.80);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   AI
+   ========================================================= */
+
+.ai-panel {
+  background: var(--blue) !important;
+}
+
+.ai-section {
+  margin-top: 17px;
+}
+
+.ai-section .k {
+  color:
+    rgba(255, 255, 255, 0.60);
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.ai-section p {
+  margin-top: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+.evidence-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  margin-top: 10px;
+}
+
+.evidence {
+  padding: 10px 11px;
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FLOW
+   ========================================================= */
+
+.flow {
+  display: grid;
+
+  grid-template-columns:
+    repeat(6, minmax(0, 1fr));
+
+  gap: 7px;
+
+  margin-top: 16px;
+}
+
+.flow-step {
+  min-height: 72px;
+
+  padding: 11px;
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+}
+
+.flow-step.active {
+  background:
+    rgba(255, 255, 255, 0.14);
+
+  border-color:
+    rgba(255, 255, 255, 0.42);
+}
+
+.flow-step.done {
+  background:
+    rgba(34, 197, 94, 0.10);
+
+  border-color:
+    rgba(187, 247, 208, 0.28);
+}
+
+.flow-step .n {
+  color:
+    rgba(255, 255, 255, 0.60);
+
+  font-size: 11px;
+
+  font-weight: 900;
+}
+
+.flow-step .t {
+  margin-top: 7px;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  line-height: 1.35;
+}
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+
+.timeline {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin-top: 14px;
+}
+
+.timeline-item {
+  display: grid;
+
+  grid-template-columns: 16px 1fr;
+
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+
+  margin-top: 5px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 255, 255, 0.10);
+}
+
+.timeline-title {
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.timeline-desc {
+  margin-top: 4px;
+
+  color:
+    rgba(255, 255, 255, 0.68);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.timeline-time {
+  margin-top: 5px;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   AUTH
+   ========================================================= */
+
+.auth-box {
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16);
+}
+
+.auth-box .status {
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+.auth-box h3 {
+  margin: 8px 0 5px;
+
+  color: white;
+
+  font-size: 19px;
+}
+
+.auth-box p {
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+input {
+  color: white !important;
+
+  background:
+    rgba(255, 255, 255, 0.08) !important;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.16) !important;
+}
+
+input::placeholder {
+  color:
+    rgba(255, 255, 255, 0.45);
+}
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.empty {
+  padding: 40px;
+
+  text-align: center;
+
+  color: #718096;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer-note {
+  color: #7a8796;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   BACK BUTTON / CASE TITLE
+   ========================================================= */
+
+.back {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 13px;
+
+  color: var(--blue);
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.big-title {
+  margin: 8px 0 0;
+
+  color: var(--text-dark);
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .kpis {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+
+  .case-row {
+    grid-template-columns:
+      1.2fr
+      1fr
+      1.2fr
+      0.8fr
+      1fr;
+  }
+
+  .case-row > :nth-child(6),
+  .case-row > :nth-child(7),
+  .case-head > :nth-child(6),
+  .case-head > :nth-child(7) {
+    display: none;
+  }
+
+  .flow {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .flow {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 680px) {
+  .page {
+    padding: 16px;
+  }
+
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .kpis {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .case-row {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .case-row > :nth-child(n + 3) {
+    display: none;
+  }
+
+  .case-head {
+    display: none;
+  }
+
+  .info-grid,
+  .info-grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .brand-copy span {
+    display: none;
+  }
+
+  .demo-badge {
+    padding: 7px 10px;
+
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   REFILLOPS — GLOBAL DESIGN SYSTEM OVERRIDE
+   Apply the Refills table treatment consistently across
+   every page and every operational section.
+   ========================================================= */
+
+/* Main workspace remains light and spacious */
+html,
+body,
+.app-shell {
+  background: #f0f1f4 !important;
+  color: #243653 !important;
+}
+
+/* Keep KPI summary cards blue; all other content surfaces white */
+.card:not(.kpi),
+.panel,
+.case-main > .card,
+.case-side > .card,
+.ai-panel,
+.auth-box {
+  background: #ffffff !important;
+  color: #243653 !important;
+  border: 1px solid #dfe5eb !important;
+  box-shadow:
+    0 8px 24px rgba(24, 35, 46, 0.07) !important;
+}
+
+.card.kpi {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+/* Section headings use the same hierarchy as Refills Requiring Attention */
+.section-head h2,
+.panel h2 {
+  color: #243653 !important;
+}
+
+.section-head .small-muted,
+.section-head .muted {
+  color: #6f7f92 !important;
+}
+
+.section-head svg {
+  color: #27b7d3 !important;
+}
+
+/* Dark-blue section header strip for card sections when they contain a header band */
+.section-band,
+.card-header-band {
+  background:
+    linear-gradient(
+      90deg,
+      #294473 0%,
+      #263f6c 55%,
+      #294b82 100%
+    ) !important;
+  color: #ffffff !important;
+}
+
+/* White content boxes everywhere outside KPI cards */
+.card:not(.kpi) .info,
+.panel .info,
+.ai-panel .info,
+.auth-box .info {
+  background: #ffffff !important;
+  color: #243653 !important;
+  border: 1px solid #e1e6ec !important;
+  box-shadow: 0 3px 10px rgba(24, 35, 46, 0.035);
+}
+
+.card:not(.kpi) .info .k,
+.panel .info .k,
+.ai-panel .info .k,
+.auth-box .info .k {
+  color: #718096 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.07em;
+}
+
+.card:not(.kpi) .info .v,
+.panel .info .v,
+.ai-panel .info .v,
+.auth-box .info .v {
+  color: #263653 !important;
+  font-size: 15px !important;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* Text on all white surfaces */
+.card:not(.kpi) h3,
+.card:not(.kpi) h4,
+.panel h3,
+.panel h4,
+.ai-panel h3,
+.ai-panel h4,
+.auth-box h3,
+.auth-box h4 {
+  color: #243653 !important;
+}
+
+.card:not(.kpi) p,
+.panel p,
+.ai-panel p,
+.auth-box p {
+  color: #506078 !important;
+}
+
+.card:not(.kpi) .small-muted,
+.panel .small-muted,
+.ai-panel .small-muted,
+.auth-box .small-muted {
+  color: #6f7f92 !important;
+}
+
+/* Operational / Practice / System sections match the refill table section */
+main.page > section.card.panel {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+main.page > section.card.panel .section-head {
+  margin-top: 0;
+  margin-bottom: 13px;
+}
+
+main.page > section.card.panel .info-grid {
+  margin-top: 0;
+}
+
+main.page > section.card.panel .info {
+  min-height: 100px;
+  background: #ffffff !important;
+  border: 1px solid #dfe5eb !important;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(24, 35, 46, 0.045);
+}
+
+main.page > section.card.panel .info .k {
+  color: #718096 !important;
+}
+
+main.page > section.card.panel .info .v {
+  color: #263653 !important;
+  font-size: 15px !important;
+  line-height: 1.55;
+}
+
+main.page > section.card.panel .info .small-muted {
+  color: #718096 !important;
+}
+
+main.page > section.card.panel .footer-note {
+  color: #7a8796 !important;
+}
+
+/* Detail-page callouts become clean light surfaces */
+.card:not(.kpi) .callout,
+.panel .callout,
+.ai-panel .callout,
+.auth-box .callout {
+  background: #f8fafc !important;
+  color: #263653 !important;
+  border: 1px solid #dfe5eb !important;
+}
+
+.card:not(.kpi) .callout p,
+.panel .callout p,
+.ai-panel .callout p,
+.auth-box .callout p {
+  color: #506078 !important;
+}
+
+.card:not(.kpi) .callout h4,
+.panel .callout h4,
+.ai-panel .callout h4,
+.auth-box .callout h4 {
+  color: #263653 !important;
+}
+
+.card:not(.kpi) .callout.red,
+.panel .callout.red,
+.ai-panel .callout.red {
+  background: #fff6f6 !important;
+  border-color: #f3c6c6 !important;
+}
+
+.card:not(.kpi) .callout.green,
+.panel .callout.green,
+.ai-panel .callout.green {
+  background: #f1fbf4 !important;
+  border-color: #c9e8d0 !important;
+}
+
+/* AI content follows the same white enterprise treatment */
+.ai-section .k {
+  color: #718096 !important;
+}
+
+.ai-section p {
+  color: #506078 !important;
+}
+
+.evidence {
+  background: #f8fafc !important;
+  color: #506078 !important;
+  border: 1px solid #e1e6ec !important;
+}
+
+/* State engine — white card + restrained blue steps */
+.flow-step {
+  background: #f7f9fc !important;
+  border: 1px solid #dfe5eb !important;
+}
+
+.flow-step .n {
+  color: #7a8796 !important;
+}
+
+.flow-step .t {
+  color: #263653 !important;
+}
+
+.flow-step.active {
+  background: #eef5ff !important;
+  border-color: #bcd3fb !important;
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.05);
+}
+
+.flow-step.active .t {
+  color: #2563eb !important;
+}
+
+.flow-step.done {
+  background: #f1fbf4 !important;
+  border-color: #c9e8d0 !important;
+}
+
+.flow-step.done .t {
+  color: #15803d !important;
+}
+
+/* Timeline on white surfaces */
+.timeline-title {
+  color: #263653 !important;
+}
+
+.timeline-desc {
+  color: #6f7f92 !important;
+}
+
+.timeline-time {
+  color: #8a98a9 !important;
+}
+
+.dot {
+  background: #2563eb !important;
+  box-shadow: 0 0 0 3px #e7efff !important;
+}
+
+/* Professional verification/auth surfaces */
+.auth-box {
+  background: #f8fafc !important;
+}
+
+.auth-box .status {
+  color: #2563eb !important;
+}
+
+/* Buttons inside white sections */
+.card:not(.kpi) .btn-primary,
+.panel .btn-primary,
+.ai-panel .btn-primary,
+.auth-box .btn-primary {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+}
+
+.card:not(.kpi) .btn-primary:hover,
+.panel .btn-primary:hover,
+.ai-panel .btn-primary:hover,
+.auth-box .btn-primary:hover {
+  background: #1d4ed8 !important;
+}
+
+/* Toast is intentionally handled inline in page.tsx with Healthcare Blue */
+
+/* Keep mobile layout consistent */
+@media (max-width: 680px) {
+  main.page > section.card.panel .info {
+    min-height: auto;
+  }
+}
+
+
+/* =========================================================
+   REFILLOPS — RESOLUTION STATE ENGINE
+   FINAL HORIZONTAL CHECKPOINT TIMELINE
+   ========================================================= */
+
+.checkpoint-track {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 24px;
+  padding: 10px 2px 4px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* ---------------------------------------------------------
+   CHECKPOINT
+   --------------------------------------------------------- */
+
+.checkpoint {
+  flex: 1 1 0;
+  min-width: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------------------------------------------------------
+   NODE
+   --------------------------------------------------------- */
+
+.checkpoint-node {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 2px solid #cbd5df;
+
+  position: relative;
+  z-index: 3;
+
+  box-shadow:
+    0 0 0 5px #ffffff;
+}
+
+/* Completed checkpoint */
+
+.checkpoint.done .checkpoint-node {
+  background: #2563eb;
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 5px #ffffff,
+    0 3px 8px rgba(37, 99, 235, 0.18);
+}
+
+/* Active checkpoint */
+
+.checkpoint.active .checkpoint-node {
+  background: #2563eb;
+  border: 3px solid #ffffff;
+
+  box-shadow:
+    0 0 0 2px #2563eb,
+    0 0 0 6px #ffffff,
+    0 4px 12px rgba(37, 99, 235, 0.22);
+}
+
+/* Future checkpoint */
+
+.checkpoint:not(.done):not(.active)
+  .checkpoint-node {
+  background: #ffffff;
+
+  border-color: #cbd5df;
+
+  box-shadow:
+    0 0 0 5px #ffffff;
+}
+
+/* ---------------------------------------------------------
+   CHECK MARK
+   --------------------------------------------------------- */
+
+.checkpoint-check {
+  color: #ffffff;
+
+  font-size: 15px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+/* ---------------------------------------------------------
+   ACTIVE DOT
+   --------------------------------------------------------- */
+
+.checkpoint-active-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  display: block;
+}
+
+/* ---------------------------------------------------------
+   FUTURE DOT
+   --------------------------------------------------------- */
+
+.checkpoint-empty-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  display: block;
+}
+
+/* ---------------------------------------------------------
+   STEP NUMBER
+   --------------------------------------------------------- */
+
+.checkpoint-number {
+  margin-top: 12px;
+
+  color: #7b8796;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.checkpoint.done .checkpoint-number {
+  color: #526273;
+}
+
+.checkpoint.active .checkpoint-number {
+  color: #2563eb;
+}
+
+/* ---------------------------------------------------------
+   STEP LABEL
+   --------------------------------------------------------- */
+
+.checkpoint-label {
+  margin-top: 8px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  line-height: 1.3;
+
+  font-weight: 800;
+
+  letter-spacing: 0.045em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.checkpoint.done .checkpoint-label {
+  color: #263653;
+}
+
+.checkpoint.active .checkpoint-label {
+  color: #2563eb;
+
+  font-weight: 900;
+}
+
+/* ---------------------------------------------------------
+   CONNECTOR
+   --------------------------------------------------------- */
+
+.checkpoint-connector {
+  flex: 0 1 90px;
+
+  height: 2px;
+
+  background: #d8e0e8;
+
+  margin-top: 14px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.checkpoint-connector.done {
+  background: #2563eb;
+
+  height: 3px;
+}
+
+/* ---------------------------------------------------------
+   REMOVE OLD FLOW BOX STYLING
+   --------------------------------------------------------- */
+
+.flow-step {
+  background: transparent !important;
+
+  border: none !important;
+
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+}
+
+.flow-step:hover,
+.flow-step.active,
+.flow-step.done {
+  background: transparent !important;
+
+  border: none !important;
+
+  box-shadow: none !important;
+}
+
+/* Old flow is no longer used */
+.flow {
+  background: transparent !important;
+
+  border: none !important;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .checkpoint-track {
+    justify-content: flex-start;
+
+    min-width: 900px;
+
+    padding-right: 24px;
+  }
+
+  .checkpoint {
+    min-width: 115px;
+  }
+
+  .checkpoint-connector {
+    flex-basis: 65px;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkpoint-track {
+    min-width: 820px;
+  }
+
+  .checkpoint {
+    min-width: 105px;
+  }
+
+  .checkpoint-label {
+    font-size: 10px;
+  }
+
+  .checkpoint-connector {
+    flex-basis: 55px;
+  }
+}
+
+
+
+/* =========================================================
+   REFILLOPS — DETAIL / SECOND PAGE FINAL THEME
+   Match the dashboard visual language exactly
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   DETAIL PAGE BACKGROUND
+   --------------------------------------------------------- */
+
+.app-shell,
+main.page {
+  background: #f0f1f4 !important;
+  color: #243653 !important;
+}
+
+/* ---------------------------------------------------------
+   DETAIL PAGE HERO
+   --------------------------------------------------------- */
+
+main.page .hero {
+  background: transparent !important;
+}
+
+main.page .hero h1,
+main.page .hero .big-title {
+  color: #18232e !important;
+}
+
+main.page .hero p {
+  color: #526273 !important;
+}
+
+main.page .eyebrow {
+  color: #2563eb !important;
+}
+
+/* ---------------------------------------------------------
+   TOP PATIENT / PHARMACY / PROVIDER INFORMATION
+   --------------------------------------------------------- */
+
+main.page > .info-grid > .info {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+
+  border: 1px solid #dfe5eb !important;
+
+  border-radius: 12px !important;
+
+  box-shadow:
+    0 4px 12px
+    rgba(24, 35, 46, 0.045) !important;
+
+  padding: 15px !important;
+}
+
+main.page > .info-grid > .info .k {
+  color: #718096 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.07em !important;
+
+  text-transform: uppercase !important;
+}
+
+main.page > .info-grid > .info .v {
+  margin-top: 7px !important;
+
+  color: #263653 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1.45 !important;
+}
+
+/* ---------------------------------------------------------
+   ALL DETAIL PAGE CARDS
+   --------------------------------------------------------- */
+
+.case-main > .card,
+.case-side > .card,
+.case-main > section.card,
+.case-side > section.card,
+main.page .ai-panel,
+main.page .auth-box {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+
+  border: 1px solid #dfe5eb !important;
+
+  border-radius: 14px !important;
+
+  box-shadow:
+    0 8px 24px
+    rgba(24, 35, 46, 0.07) !important;
+}
+
+/* ---------------------------------------------------------
+   SECTION HEADINGS
+   --------------------------------------------------------- */
+
+.case-main .section-head h2,
+.case-side .section-head h2,
+.case-main .section-head h3,
+.case-side .section-head h3 {
+  color: #243653 !important;
+
+  font-weight: 800 !important;
+}
+
+.case-main .section-head .small-muted,
+.case-side .section-head .small-muted {
+  color: #6f7f92 !important;
+}
+
+/* Icons */
+
+.case-main .section-head svg,
+.case-side .section-head svg {
+  color: #2563eb !important;
+}
+
+/* ---------------------------------------------------------
+   REFILL BLOCKER / CALL OUT
+   --------------------------------------------------------- */
+
+.case-main .callout,
+.case-side .callout,
+.ai-panel .callout {
+  background: #f8fafc !important;
+
+  color: #263653 !important;
+
+  border: 1px solid #dfe5eb !important;
+
+  border-radius: 10px !important;
+}
+
+.case-main .callout h4,
+.case-side .callout h4,
+.ai-panel .callout h4 {
+  color: #263653 !important;
+}
+
+.case-main .callout p,
+.case-side .callout p,
+.ai-panel .callout p {
+  color: #506078 !important;
+}
+
+/* Keep safety warning professional */
+
+.case-main .callout.red,
+.case-side .callout.red,
+.ai-panel .callout.red {
+  background: #fff6f6 !important;
+
+  border-color: #f3c6c6 !important;
+}
+
+.case-main .callout.green,
+.case-side .callout.green,
+.ai-panel .callout.green {
+  background: #f1fbf4 !important;
+
+  border-color: #c9e8d0 !important;
+}
+
+/* ---------------------------------------------------------
+   ALL INFO BOXES INSIDE DETAIL PAGE
+   --------------------------------------------------------- */
+
+.case-main .info,
+.case-side .info {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+
+  border: 1px solid #dfe5eb !important;
+
+  border-radius: 10px !important;
+
+  box-shadow:
+    0 3px 10px
+    rgba(24, 35, 46, 0.035) !important;
+}
+
+.case-main .info .k,
+.case-side .info .k {
+  color: #718096 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.07em !important;
+
+  text-transform: uppercase !important;
+}
+
+.case-main .info .v,
+.case-side .info .v {
+  color: #263653 !important;
+
+  font-size: 15px !important;
+
+  font-weight: 700 !important;
+
+  line-height: 1.5 !important;
+}
+
+/* ---------------------------------------------------------
+   AI REFILL RESOLVER
+   --------------------------------------------------------- */
+
+main.page .ai-panel {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+}
+
+main.page .ai-panel .ai-header h3 {
+  color: #243653 !important;
+
+  font-size: 18px !important;
+
+  font-weight: 800 !important;
+}
+
+main.page .ai-panel .ai-header .small-muted {
+  color: #6f7f92 !important;
+}
+
+main.page .ai-panel .ai-chip {
+  background: #eef5ff !important;
+
+  color: #2563eb !important;
+
+  border: 1px solid #c7dafb !important;
+
+  border-radius: 7px !important;
+}
+
+/* AI section labels */
+
+main.page .ai-panel .ai-section .k {
+  color: #718096 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.07em !important;
+
+  text-transform: uppercase !important;
+}
+
+main.page .ai-panel .ai-section p {
+  color: #506078 !important;
+
+  font-size: 14px !important;
+
+  line-height: 1.6 !important;
+}
+
+/* ---------------------------------------------------------
+   AI EVIDENCE
+   --------------------------------------------------------- */
+
+main.page .ai-panel .evidence-list {
+  gap: 7px !important;
+}
+
+main.page .ai-panel .evidence {
+  display: flex !important;
+
+  align-items: flex-start !important;
+
+  gap: 7px !important;
+
+  background: #f8fafc !important;
+
+  color: #506078 !important;
+
+  border: 1px solid #dfe5eb !important;
+
+  border-radius: 8px !important;
+
+  padding: 9px 10px !important;
+
+  font-size: 13px !important;
+
+  line-height: 1.45 !important;
+}
+
+main.page .ai-panel .evidence svg {
+  flex: 0 0 auto;
+
+  color: #2563eb !important;
+
+  margin-top: 1px;
+}
+
+/* ---------------------------------------------------------
+   RESOLUTION STATE ENGINE
+   --------------------------------------------------------- */
+
+main.page .case-main > section.card.panel {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+}
+
+/* ---------------------------------------------------------
+   ACTIVITY TIMELINE
+   --------------------------------------------------------- */
+
+main.page .timeline-title {
+  color: #263653 !important;
+
+  font-weight: 800 !important;
+}
+
+main.page .timeline-desc {
+  color: #6f7f92 !important;
+}
+
+main.page .timeline-time {
+  color: #8a98a9 !important;
+}
+
+main.page .timeline .dot {
+  background: #2563eb !important;
+
+  box-shadow:
+    0 0 0 3px #e7efff !important;
+}
+
+/* ---------------------------------------------------------
+   STATUS PILLS
+   --------------------------------------------------------- */
+
+/* Default status */
+
+main.page .pill {
+  font-size: 11px !important;
+
+  font-weight: 800 !important;
+
+  letter-spacing: 0.04em !important;
+
+  border-radius: 7px !important;
+
+  box-shadow: none !important;
+}
+
+/* Blue */
+
+main.page .pill-blue {
+  background: #eef5ff !important;
+
+  color: #2563eb !important;
+
+  border: 1px solid #c7dafb !important;
+}
+
+/* Amber */
+
+main.page .pill-amber {
+  background: #fff8e8 !important;
+
+  color: #b7791f !important;
+
+  border: 1px solid #f2d59b !important;
+}
+
+/* Red */
+
+main.page .pill-red {
+  background: #fff1f1 !important;
+
+  color: #c53030 !important;
+
+  border: 1px solid #efc0c0 !important;
+}
+
+/* Green */
+
+main.page .pill-green {
+  background: #f1fbf4 !important;
+
+  color: #15803d !important;
+
+  border: 1px solid #c9e8d0 !important;
+}
+
+/* ---------------------------------------------------------
+   BUTTONS
+   Dashboard-style buttons
+   --------------------------------------------------------- */
+
+main.page .btn {
+  border-radius: 9px !important;
+
+  font-size: 13px !important;
+
+  font-weight: 700 !important;
+}
+
+main.page .btn-primary {
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+
+  border-color: #2563eb !important;
+
+  box-shadow:
+    0 5px 14px
+    rgba(37, 99, 235, 0.18) !important;
+}
+
+main.page .btn-primary:hover {
+  background: #1d4ed8 !important;
+
+  border-color: #1d4ed8 !important;
+}
+
+main.page .btn-ghost,
+main.page .open-btn {
+  background: #ffffff !important;
+
+  color: #263746 !important;
+
+  border: 1px solid #d1d9e0 !important;
+
+  box-shadow:
+    0 3px 9px
+    rgba(24, 35, 46, 0.05) !important;
+}
+
+/* ---------------------------------------------------------
+   AI PLAN READY
+   --------------------------------------------------------- */
+
+main.page .ai-panel .btn-primary {
+  background: #2563eb !important;
+
+  color: #ffffff !important;
+
+  border-color: #2563eb !important;
+}
+
+/* ---------------------------------------------------------
+   HUMAN CONTROL CARD
+   --------------------------------------------------------- */
+
+main.page .case-side > section:last-child {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+}
+
+main.page .case-side > section:last-child h3 {
+  color: #243653 !important;
+}
+
+main.page .case-side > section:last-child p {
+  color: #506078 !important;
+}
+
+/* ---------------------------------------------------------
+   AUTHENTICATION AREA
+   --------------------------------------------------------- */
+
+main.page .auth-box {
+  background: #ffffff !important;
+
+  color: #243653 !important;
+
+  border: 1px solid #dfe5eb !important;
+}
+
+main.page .auth-box h3 {
+  color: #243653 !important;
+}
+
+main.page .auth-box p {
+  color: #506078 !important;
+}
+
+main.page .auth-box input {
+  background: #ffffff !important;
+
+  color: #263653 !important;
+
+  border: 1px solid #d1d9e0 !important;
+}
+
+main.page .auth-box input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* ---------------------------------------------------------
+   REMOVE OLD BLUE DETAIL SURFACES
+   --------------------------------------------------------- */
+
+main.page .case-main > .card,
+main.page .case-side > .card,
+main.page .ai-panel,
+main.page .auth-box {
+  background-color: #ffffff !important;
+}
+
+/* ---------------------------------------------------------
+   DETAIL PAGE SPACING
+   --------------------------------------------------------- */
+
+main.page .case-grid {
+  align-items: start;
+}
+
+main.page .case-main,
+main.page .case-side {
+  gap: 16px;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  main.page > .info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  main.page .case-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 680px) {
+  main.page > .info-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  main.page .info {
+    min-height: auto !important;
+  }
+}
+
+/* =========================================================
+   RESOLUTION STATE ENGINE
+   CHECKPOINT TIMELINE
+   ========================================================= */
+
+.checkpoint-track {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  margin-top: 24px;
+  padding: 10px 4px 6px;
+
+  overflow-x: auto;
+}
+
+/* Each checkpoint */
+
+.checkpoint {
+  flex: 1 1 0;
+
+  min-width: 95px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* Circle */
+
+.checkpoint-node {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 2px solid #cbd5df;
+
+  box-shadow:
+    0 0 0 5px #ffffff;
+
+  position: relative;
+  z-index: 3;
+}
+
+/* Completed */
+
+.checkpoint.done .checkpoint-node {
+  background: #2563eb;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 5px #ffffff,
+    0 3px 8px rgba(37, 99, 235, 0.18);
+}
+
+/* Active */
+
+.checkpoint.active .checkpoint-node {
+  background: #2563eb;
+
+  border: 3px solid #ffffff;
+
+  box-shadow:
+    0 0 0 2px #2563eb,
+    0 0 0 6px #ffffff,
+    0 4px 12px rgba(37, 99, 235, 0.22);
+}
+
+/* Check mark */
+
+.checkpoint-check {
+  color: #ffffff;
+
+  font-size: 15px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+/* Active white dot */
+
+.checkpoint-active-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+}
+
+/* Future empty node */
+
+.checkpoint-empty-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: transparent;
+}
+
+/* Number */
+
+.checkpoint-number {
+  margin-top: 12px;
+
+  color: #7b8796;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+}
+
+.checkpoint.done .checkpoint-number {
+  color: #526273;
+}
+
+.checkpoint.active .checkpoint-number {
+  color: #2563eb;
+}
+
+/* Label */
+
+.checkpoint-label {
+  margin-top: 8px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.045em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.checkpoint.done .checkpoint-label {
+  color: #263653;
+}
+
+.checkpoint.active .checkpoint-label {
+  color: #2563eb;
+
+  font-weight: 900;
+}
+
+/* Connector */
+
+.checkpoint-connector {
+  flex: 0 1 85px;
+
+  height: 2px;
+
+  margin-top: 14px;
+
+  background: #d8e0e8;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.checkpoint-connector.done {
+  height: 3px;
+
+  background: #2563eb;
+}
+
+/* Remove old boxed flow styling */
+
+.flow {
+  display: none !important;
+}
+
+.flow-step {
+  display: none !important;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .checkpoint-track {
+    justify-content: flex-start;
+
+    min-width: 820px;
+
+    overflow-x: auto;
+  }
+
+  .checkpoint {
+    min-width: 105px;
+  }
+
+  .checkpoint-connector {
+    flex-basis: 65px;
+  }
+}
+
+@media (max-width: 600px) {
+  .checkpoint-track {
+    min-width: 780px;
+  }
+
+  .checkpoint {
+    min-width: 100px;
+  }
+
+  .checkpoint-connector {
+    flex-basis: 55px;
+  }
+
+  .checkpoint-label {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   REFILLOPS — GLOBAL FONT SIZE BOOST
+   Slightly larger and easier to read
+   ========================================================= */
+
+body {
+  font-size: 16px !important;
+}
+
+.hero p,
+.panel p,
+.card:not(.kpi) p,
+.ai-panel p,
+.small-muted,
+.muted {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+.info .k,
+.info-grid .k,
+.ai-section .k,
+.case-head > div {
+  font-size: 12px !important;
+}
+
+.info .v {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+.case-row .small-muted,
+.case-row .action-cell {
+  font-size: 15px !important;
+}
+
+.timeline-title {
+  font-size: 15px !important;
+}
+
+.timeline-desc {
+  font-size: 14px !important;
+}
+
+.timeline-time {
+  font-size: 12px !important;
+}
+
+.checkpoint-number {
+  font-size: 12px !important;
+}
+
+.checkpoint-label {
+  font-size: 12px !important;
+}
+
+.btn,
+.filter {
+  font-size: 14px !important;
+}
+
+.kpi .label {
+  font-size: 13px !important;
+}
+
+.kpi .value {
+  font-size: 30px !important;
+}
+
+.kpi .sub {
+  font-size: 14px !important;
+}
